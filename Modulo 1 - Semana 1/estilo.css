@@ -1,0 +1,47 @@
+
+html{
+	background-color: rgb(255, 255, 0);
+}
+
+h1{
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: brown;
+	background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F1145374.jpg&f=1&nofb=1);
+}
+
+p{
+	font-size: 14pt;
+}
+
+#icon-gato{
+	height: 100px;
+	width: 100px;
+}
+
+#container{
+	position: flex;
+	justify-content: center;
+}
+
+nav{
+	position: sticky;
+	top:0;
+	background-color: #A5F70C;
+}
+
+#home:hover{background: #81c00c;}
+#imagens:hover{background: #81c00c;}
+
+
+button{
+	border-radius: 20px;
+	padding: 10px;
+	border-width: 2px;
+	border-color: black;
+	margin-top: 20px;
+}
+
+footer{
+	background-color: #EDC00C;
+}
