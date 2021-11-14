@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Enter value of i: " i
+read -p "Informe a sua idade: " i
 
 if [ $i -lt 16 ]
 then
