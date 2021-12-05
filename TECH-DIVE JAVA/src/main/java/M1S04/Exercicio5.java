@@ -1,3 +1,5 @@
+package M1S04;
+
 import java.util.Scanner;
 
 public class Exercicio5 {
