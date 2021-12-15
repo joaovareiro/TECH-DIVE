@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea413611-73e4-4e06-b3ee-2b9ef26cad69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../TECH-DIVE JAVA/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TECH-DIVE JAVA/src/main/java/M1S05/Exercicio2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TECH-DIVE JAVA/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TECH-DIVE JAVA/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +11,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="21mPz02dTR1pd14WckbZI9yKUzI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
