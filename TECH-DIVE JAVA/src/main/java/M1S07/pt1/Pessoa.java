@@ -1,7 +1,7 @@
-package M1S07;
+package M1S07.pt1;
 
-public class Ex1 {
     public class Pessoa{
+        //Exercicio 1
         private String nome;
         private String endereço;
         private String telefone;
@@ -44,4 +44,4 @@ public class Ex1 {
             this.telefone = telefone;
         }
     }
-}
+
