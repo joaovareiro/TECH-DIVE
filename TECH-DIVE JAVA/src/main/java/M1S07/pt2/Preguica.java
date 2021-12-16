@@ -1,7 +1,7 @@
 package M1S07.pt2;
 
 public class Preguica extends Animal{
-
+    //Exercicio 7
     public Preguica(String nome, int idade) {
         super(nome, idade);
     }

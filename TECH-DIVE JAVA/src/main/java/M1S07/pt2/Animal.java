@@ -1,6 +1,7 @@
 package M1S07.pt2;
 
 public abstract class Animal {
+    //Exercicio 7
     private String nome;
     private int idade;
 

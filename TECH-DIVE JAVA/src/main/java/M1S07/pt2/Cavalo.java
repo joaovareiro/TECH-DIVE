@@ -1,7 +1,7 @@
 package M1S07.pt2;
 
 public class Cavalo extends Animal{
-
+    //Exercicio 7
     public Cavalo(String nome, int idade) {
         super(nome, idade);
     }

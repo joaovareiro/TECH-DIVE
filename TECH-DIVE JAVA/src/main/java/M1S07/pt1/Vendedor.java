@@ -3,6 +3,7 @@ package M1S07.pt1;
 import M1S07.pt1.Empregado;
 
 public class Vendedor extends Empregado {
+    //Exercicio 6
     private double valorVendas = 0;
     private double comissao = 0;
 

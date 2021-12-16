@@ -1,7 +1,7 @@
 package M1S07.pt1;
 
 public class Empregado extends Pessoa {
-    //Exercicic 3
+    //Exercicio 3
     private int codigoSetor;
     private double salarioBase;
     private double imposto;
