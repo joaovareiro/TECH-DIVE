@@ -5,11 +5,13 @@ public class Product {
 	private String name;
 	private String description;
 	private double price;
+	private int fk_category_id;
 	
-	public Product(String name, String description, double price) {
+	public Product(String name, String description, double price, int fk_category_id) {
 		this.name = name;
 		this.description = description;
 		this.price = price;
+		this.fk_category_id = fk_category_id;
 	};
 	
 	
@@ -53,15 +55,33 @@ public class Product {
 	public long getId() {
 		return id;
 	}
+	
+	public int getFk_category_id() {
+		return fk_category_id;
+	}
+
+
+
+	public void setFk_category_id(int fk_category_id) {
+		this.fk_category_id = fk_category_id;
+	}
+
+	
+
+
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
+		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price
+				+ ", fk_category_id=" + fk_category_id + "]";
 	}
 
 
 
 	public Product() {}
+
+
+
 	
 	
 }

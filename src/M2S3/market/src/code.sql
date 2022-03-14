@@ -4,7 +4,8 @@ create table produto(
     id serial primary key,
     nome_produto varchar(100) not null,
     descricao varchar(100) not null,
-    preco_produto numeric(6,2) not null
+    preco_produto numeric(6,2) not null,
+    foreign key(fk_id_categoria) references categoria(id);
 );
 
 create table gerente(

@@ -6,9 +6,10 @@ public class Employee {
 	private String cpf_employee;
 	private long fk_id_manager;
 	
-	public Employee(String name_employee, String cpf_employee) {
+	public Employee(String name_employee, String cpf_employee, long fk_id_manager) {
 		this.name_employee = name_employee;
 		this.cpf_employee = cpf_employee;
+		this.fk_id_manager = fk_id_manager;
 	}
 
 	public long getId_employee() {

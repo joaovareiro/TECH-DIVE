@@ -1,5 +1,11 @@
 package market.entities;
 
+import java.sql.SQLException;
+import java.util.List;
+
+import market.model.dao.CategoryDAO;
+import market.model.dao.ManagerDAO;
+
 public class Manager {
 	private long id_manager;
 	private String nome_manager;
@@ -9,7 +15,7 @@ public class Manager {
 		this.nome_manager = nome_manager;
 		this.cpf_manager = cpf_manager;
 	}
-
+	
 	public long getId_manager() {
 		return id_manager;
 	}
