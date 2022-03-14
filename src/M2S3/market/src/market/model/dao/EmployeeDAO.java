@@ -21,14 +21,14 @@ public class EmployeeDAO {
 	
 	
 	public boolean create(String nome_funcionario, String cpf_funcionario, long fk_id_funcionario) throws SQLException {
-		try(PreparedStatement preparedStatemente = conn.prepareStatement("insert into funcionario(nome_funcionario,cpf_funcionario,fk_id_funcionario) values (?,?,?)")){
+		try(PreparedStatement preparedStatement = conn.prepareStatement("insert into funcionario(nome_funcionario,cpf_funcionario,fk_id_funcionario) values (?,?,?)")){
 			ManagerDAO mDAO = new ManagerDAO(conn);
 			Manager testeManager = mDAO.getCategoryById(fk_id_funcionario);
 			if(testeManager == null) {
 				System.out.println("A id do gerente que foi inserida não foi encontrada no banco de dados");
 			}else {
 			Employee employee = new Employee(nome_funcionario,cpf_funcionario,fk_id_funcionario);
-			add(preparedStatemente,employee);
+			add(preparedStatement,employee);
 			}
 		}
 		return false;
@@ -45,11 +45,11 @@ public class EmployeeDAO {
 		try {
 
 			String sql = "delete from funcionario where id_funcionario = ?";
-			PreparedStatement prepareStatement = conn.prepareStatement(sql);
-			prepareStatement.setInt(1, id);
-			prepareStatement.execute();
+			PreparedStatement preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+			preparedStatement.execute();
 
-			int updateCount = prepareStatement.getUpdateCount();
+			int updateCount = preparedStatement.getUpdateCount();
 
 			if (updateCount == 0) {
 				System.out.println("Funcionario não encontrado no banco.");
@@ -62,6 +62,28 @@ public class EmployeeDAO {
 			System.out.println("Erro ao deletar um Funcionario. Causado por: " + e.getMessage());
 			e.printStackTrace();
 			return false;
+		}
+	}
+	
+	public List<Employee>getEmployeesByManagerID(int id) throws SQLException {
+		List<Employee> employees = new ArrayList<>();
+		String sql =  "select id_funcionario,nome_funcionario,cpf_funcionario,fk_id_funcionario from funcionario as f inner join gerente as g on f.fk_id_funcionario = g.id_gerente where fk_id_funcionario = ?";
+		int cont = 0;
+		try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
+			preparedStatement.setInt(1, id);
+		try (ResultSet resultSet = preparedStatement.executeQuery()) {
+			while (resultSet.next()) {
+				Employee employee = new Employee(resultSet.getString("nome_funcionario"),resultSet.getString("cpf_funcionario"),resultSet.getLong("fk_id_funcionario"));
+				employee.setId_employee(resultSet.getLong("id_funcionario"));
+				employee.setFk_id_manager(resultSet.getLong("fk_id_funcionario"));
+				employees.add(employee);
+				cont++;
+			}
+		}
+		if (cont == 0) {
+			System.out.println("O gerente com esse ID não foi encontrado no Banco de Dados");
+		}
+		return employees;
 		}
 	}
 	

@@ -26,7 +26,8 @@ public class Menu {
 					3 - Deletar um funcionario
 					4 - Apresentar informações sobre um funcionario especifico por meio do ID
 					5 - Apresentar informações sobre um funcionario especifico por meio do nome
-					6 - Sair do menu de funcionarios """);
+					6 - Listar funcionários associados a um gerente
+					7 - Sair do menu de funcionarios """);
 			op = sc.nextInt();
 			if (op == 1) {
 				System.out.println("Digite o nome do funcionario");
@@ -41,19 +42,24 @@ public class Menu {
 				List<Employee> employees = eDAO.list();
 				employees.stream().forEach(e -> System.out.println(e.toString()));
 			} else if (op == 3) {
-				System.out.println("Digite o id do funcionario ");
+				System.out.println("Digite o id do funcionario");
 				int idGerente = sc.nextInt();
 				eDAO.delete(idGerente);
 			} else if (op == 4) {
-				System.out.println("Digite o id do funcionario ");
+				System.out.println("Digite o id do funcionario");
 				int idGerente = sc.nextInt();
 				eDAO.getByID(idGerente);
 			} else if (op == 5) {
-				System.out.println("Digite o nome do funcionario ");
+				System.out.println("Digite o nome do funcionario");
 				sc.nextLine();
 				String nomeGerente = sc.nextLine();
 				eDAO.getByName(nomeGerente);
 			} else if (op == 6) {
+				System.out.println("Digite o id do gerente");
+				int idGerente = sc.nextInt();
+				List<Employee> employees = eDAO.getEmployeesByManagerID(idGerente);
+				employees.stream().forEach(e -> System.out.println(e.toString()));
+			} else if (op == 7) {
 				break;
 			}
 		}
